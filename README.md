@@ -16,7 +16,7 @@
 
 ## Установка
 
-`git clone git@github.com:DannyOhDanny/svelte-tasks.git` - клонируйте репозиторий;
+`https://github.com/DannyOhDanny/currency-exchange.git` - клонируйте репозиторий;
 
 `npm i` - скачайте пакеты npm;
 
