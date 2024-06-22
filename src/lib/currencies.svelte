@@ -1,0 +1,38 @@
+<script context='module'>
+
+export const currencies = [
+  { code: 'EUR', name: 'Евро' },
+  { code: 'USD', name: 'Доллар США' },
+  { code: 'JPY', name: 'Японская иена' },
+  { code: 'BGN', name: 'Болгарский лев' },
+  { code: 'CZK', name: 'Чешская крона' },
+  { code: 'DKK', name: 'Датская крона' },
+  { code: 'GBP', name: 'Фунт стерлингов' },
+  { code: 'HUF', name: 'Венгерский форинт' },
+  { code: 'PLN', name: 'Польский злотый' },
+  { code: 'RON', name: 'Румынский лей' },
+  { code: 'SEK', name: 'Шведская крона' },
+  { code: 'CHF', name: 'Швейцарский франк' },
+  { code: 'ISK', name: 'Исландская крона' },
+  { code: 'NOK', name: 'Норвежская крона' },
+  { code: 'HRK', name: 'Хорватская куна' },
+  { code: 'RUB', name: 'Российский рубль' },
+  { code: 'TRY', name: 'Турецкая лира' },
+  { code: 'AUD', name: 'Австралийский доллар' },
+  { code: 'BRL', name: 'Бразильский реал' },
+  { code: 'CAD', name: 'Канадский доллар' },
+  { code: 'CNY', name: 'Китайский юань' },
+  { code: 'HKD', name: 'Гонконгский доллар' },
+  { code: 'IDR', name: 'Индонезийская рупия' },
+  { code: 'ILS', name: 'Израильский новый шекель' },
+  { code: 'INR', name: 'Индийская рупия' },
+  { code: 'KRW', name: 'Южнокорейская вона' },
+  { code: 'MXN', name: 'Мексиканское песо' },
+  { code: 'MYR', name: 'Малайзийский ринггит' },
+  { code: 'NZD', name: 'Новозеландский доллар' },
+  { code: 'PHP', name: 'Филиппинское песо' },
+  { code: 'SGD', name: 'Сингапурский доллар' },
+  { code: 'THB', name: 'Таиландский бат' },
+  { code: 'ZAR', name: 'Южноафриканский рэнд' }
+];
+</script>
