@@ -2,6 +2,8 @@
 
 Онлайн конвертер-валют на фреймворке `svelte`
 
+## Ссылка на проект: https://dannyohdanny.github.io/currency-exchange/
+
 ## Пакеты API
 
 - API - @everapi/freecurrencyapi-js

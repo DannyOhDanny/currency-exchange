@@ -1,7 +1,10 @@
 <script context='module'>
-
+import { Us } from 'svelte-flags';
+import { Ru } from 'svelte-flags';
+import {Fr} from 'svelte-flags';
+import {Eu} from 'svelte-flags';
 export const currencies = [
-  { code: 'EUR', name: 'Евро' },
+  { code: 'EUR', name: 'Евро', flag: {Eu}},
   { code: 'USD', name: 'Доллар США' },
   { code: 'JPY', name: 'Японская иена' },
   { code: 'BGN', name: 'Болгарский лев' },
@@ -35,4 +38,7 @@ export const currencies = [
   { code: 'THB', name: 'Таиландский бат' },
   { code: 'ZAR', name: 'Южноафриканский рэнд' }
 ];
+
+console.log(currencies)
 </script>
+
