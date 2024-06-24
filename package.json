@@ -1,11 +1,12 @@
 {
-  "name": "task_2",
+  "name": "currency-exchange-app",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "deploy":"touch ./dist/.nojekyll && gh-pages -d dist",
     "dev": "vite",
+    "deploy": "touch ./dist/.nojekyll && gh-pages -d dist -t true",
     "build": "vite build",
     "preview": "vite preview",
     "check": "svelte-check --tsconfig ./tsconfig.json"

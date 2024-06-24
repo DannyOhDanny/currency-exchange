@@ -90,67 +90,58 @@ import {currencies}from './lib/currencies.svelte'
 <style>
   main {
     margin: 0 auto;
-    padding: 10px 50px ;
+    padding: 10px 50px;
     border-radius: 5px;
-    background-color: white;
+    background-color: #333; /* Темный фон */
+    color: #fff; /* Белый текст */
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    gap : 10px;
+    gap: 10px;
     width: 450px;
-    box-shadow: 13px 13px 46px 11px rgba(204,204,204,1);
-
+    box-shadow: 13px 13px 46px 11px rgba(0, 0, 0, 0.6); /* Тень */
   }
-   h1{
+
+  h1 {
     text-align: left;
     width: 200px;
     font-size: 20px;
-    color:lightseagreen;
-   }
-  input {
-    border-radius: 5px;
-    color: black;
-    border: 1px solid  lightseagreen;
-    background-color: white;
-    box-shadow: 5px 5px 5px lightseagreen;
-    height: 20px;
-    font-size: 10px; 
-
+    color: lightseagreen;
   }
+
+  input,
   select {
     border-radius: 5px;
-    color: black;
-    border: 1px solid  lightseagreen;
-    background-color: white;
+    color: #333; /* Цвет текста */
+    border: 1px solid lightseagreen;
+    background-color: #555; /* Темный фон для input и select */
     box-shadow: 5px 5px 5px lightseagreen;
     height: 20px;
-    font-size: 12px; 
-
+    font-size: 10px;
   }
 
   p {
     margin: 20px auto;
     width: 450px;
-    font-size: 15px; 
+    font-size: 15px;
     font-weight: 900;
-    color: rgb(33, 178, 178);
-    text-align: start;  
+    color: lightseagreen; /* Цвет текста */
+    text-align: start;
   }
-  
+
   label {
-      align-self: flex-start;      
-      font-size: 15px;
-      color: gray;
-    }
-    
-  div{
-      color: red;
-      font-size: 10px;
-      font-weight: 300;
-     }
+    align-self: flex-start;
+    font-size: 15px;
+    color: lightseagreen; /* Цвет текста */
+  }
+
+  div {
+    color: red;
+    font-size: 10px;
+    font-weight: 300;
+  }
 
   span {
-    color: gray;
-     }
-
+    color: lightseagreen; /* Цвет текста */
+  }
 </style>
