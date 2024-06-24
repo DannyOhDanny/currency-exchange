@@ -153,4 +153,4 @@ import {currencies}from './lib/currencies.svelte'
     color: gray;
      }
 
-</style>
+</style> 
