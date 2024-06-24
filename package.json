@@ -12,7 +12,6 @@
   },
   "devDependencies": {
     "@everapi/freecurrencyapi-js": "^1.0.1",
-    "@sveltejs/adapter-static": "^3.0.2",
     "@sveltejs/vite-plugin-svelte": "^2.4.2",
     "@tsconfig/svelte": "^5.0.0",
     "svelte": "^4.0.5",

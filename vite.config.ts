@@ -3,6 +3,5 @@ import { svelte } from '@sveltejs/vite-plugin-svelte';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [svelte()],
-  base: 'https://github.com/DannyOhDanny/currency-exchange/'
+  plugins: [svelte()]
 });
