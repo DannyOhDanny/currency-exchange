@@ -1,10 +1,12 @@
 {
-  "name": "task_2",
+  "name": "currency-exchange-app",
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "homepage": "https://github.com/DannyOhDanny/currency-exchange/",
   "scripts": {
     "dev": "vite",
+    "deploy": "gh-pages -d dist",
     "build": "vite build",
     "preview": "vite preview",
     "check": "svelte-check --tsconfig ./tsconfig.json"
@@ -18,5 +20,8 @@
     "tslib": "^2.6.0",
     "typescript": "^5.0.2",
     "vite": "^4.4.5"
+  },
+  "dependencies": {
+    "gh-pages": "^6.1.1"
   }
 }
