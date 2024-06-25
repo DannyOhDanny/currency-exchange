@@ -240,7 +240,7 @@ import {currencies}from './lib/currencies.svelte'
   padding: 5px;
     font-size: 10px;
     font-weight: 700; }
-    0
+    
  .converter__input-wrapper{
   gap: 15px;
  }
