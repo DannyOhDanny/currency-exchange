@@ -4,9 +4,12 @@
   font-weight: 400;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: white;
-
+  /* color: rgba(255, 255, 255, 0.87);
+  background-color: white; */
+  background-image: url('./src/assets/wp2300372_1_11zon.webp');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
