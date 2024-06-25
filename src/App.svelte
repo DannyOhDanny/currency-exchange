@@ -3,7 +3,6 @@ import Freecurrencyapi from '@everapi/freecurrencyapi-js';
 import { onMount } from 'svelte';
 import {currencies}from './lib/currencies.svelte'
 
-
   let currencyFrom:string = '';
   let currencyTo:string = '';
   let amountFrom:number = 0;
@@ -24,8 +23,8 @@ import {currencies}from './lib/currencies.svelte'
  
       const data = await response;
 
-      exchangeRate = data.data[currencyTo];
-      
+      exchangeRate = (data.data[currencyTo]).toFixed(2);
+
     } catch (error) {
       console.error('Ошибка при выполнении запроса:', error);
     }
@@ -50,39 +49,56 @@ import {currencies}from './lib/currencies.svelte'
 </script>
 
 
-<main>
-  <h1>Конвертер валют на {new Date().toLocaleDateString()}  </h1>
-  <label for='currencyFrom'>У меня есть
-    <select bind:value={currencyFrom} id='currencyFrom' on:change={updateExchangeRate}>
-  {#each currencies as currency}
-  <option value={currency.code}>{currency.name} - {currency.code}</option>
-  {/each}
-</select>
+<main class="converter">
+  <div class="converter__title-wrapper">
+  <h1 class="converter__title">КОНВЕРТЕР ВАЛЮТ </h1>
+  <p class="converter__paragraph">{new Date().toLocaleDateString()}</p>
+</div>
+<div class="converter__input-wrapper">
+
+<label for='sumInput' class="converter__label">Сумма для конвертации
+  <input type="number" bind:value={amountFrom} placeholder="Сумма для конвертации" on:input={updateExchangeRate} id='sumInput' class="converter__input">
 </label>
 
-<label>Сумма для конвертации
-  <input type="text" bind:value={amountFrom} placeholder="Сумма для конвертации" on:input={updateExchangeRate} >
-</label>
 
-<label for='currencyTo'>Хочу купить
-  <select bind:value={currencyTo} id='currencyTo' on:change={updateExchangeRate}>
-  {#each currencies as currency}
-  <option value={currency.code}>{currency.name} - {currency.code}</option>
-  {/each}
-</select>
-</label>
+  <label for='currencyFrom' class="converter__label">
+    У меня есть
+    <select bind:value={currencyFrom} id='currencyFrom' on:change={updateExchangeRate} class="converter__select">
+      {#each currencies as currency}
+        <option class="converter__option"value={currency.code}>{currency.name} - {currency.code} - {currency.flag}</option>
+      {/each}
+    </select>
+  </label>
 
-<p id='amount'>
-  Итого в {currencyTo} : 
-  {#if isNaN(amountTo) }
-    <div> Введите валюту, в которую вы хотите сконвертировать. </div>
-  {:else if amountFrom === 0 }
-    <div> Введите сумму, которую вы хотите сконвертировать. </div>
-  {:else}
-    <span>{amountTo} {currencyTo}</span>
+  <label for='currencyTo' class="converter__label">Хочу купить
+    <select bind:value={currencyTo} id='currencyTo' on:change={updateExchangeRate} class="converter__select">
+      {#each currencies as currency}
+        <option value={currency.code}>{currency.name} - {currency.code} - {currency.flag}</option>
+      {/each}
+    </select>
+  </label>
+
+
+  {#if exchangeRate !== null && exchangeRate !== undefined && currencyFrom }
+    <p class="converter__rate">1 {currencyFrom} = {exchangeRate} {currencyTo}</p>
+    {:else}
+    <p class="converter__rate"></p>
   {/if}
-</p>
 
+  <p id='amount' class="converter__result">
+    ИТОГО в {currencyTo} : 
+   
+    {#if (amountFrom === 0 || !amountFrom ) }
+      <p class="converter__message">Введите сумму, которую вы хотите сконвертировать.</p>
+
+      {:else if (isNaN(amountTo) || !amountTo) }
+      <p class="converter__message">Введите валюту, в которую вы хотите сконвертировать.</p>
+
+    {:else}
+     <span class="converter__amount">{amountTo} {currencyTo}</span>
+    {/if}
+  </p>
+</div>
 </main>
 
 
@@ -90,67 +106,118 @@ import {currencies}from './lib/currencies.svelte'
 <style>
   main {
     margin: 0 auto;
-    padding: 10px 50px ;
-    border-radius: 5px;
+    padding: 40px 50px ;
+    border-radius: 12px;
     background-color: white;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     gap : 10px;
-    width: 450px;
-    box-shadow: 13px 13px 46px 11px rgba(204,204,204,1);
+    width: 300px;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+  }
+  .converter__title-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 30px;
 
   }
-   h1{
+   .converter__title {
     text-align: left;
-    width: 200px;
-    font-size: 20px;
-    color:lightseagreen;
-   }
-  input {
-    border-radius: 5px;
-    color: black;
-    border: 1px solid  lightseagreen;
-    background-color: white;
-    box-shadow: 5px 5px 5px lightseagreen;
-    height: 20px;
-    font-size: 10px; 
-
-  }
-  select {
-    border-radius: 5px;
-    color: black;
-    border: 1px solid  lightseagreen;
-    background-color: white;
-    box-shadow: 5px 5px 5px lightseagreen;
-    height: 20px;
-    font-size: 12px; 
-
-  }
-
-  p {
-    margin: 20px auto;
-    width: 450px;
-    font-size: 15px; 
     font-weight: 900;
-    color: rgb(33, 178, 178);
-    text-align: start;  
+    font-size: 18px;
+    color:#062263;
+   }
+   .converter__paragraph {
+    display: flex;
+    align-self: center;
+    justify-content: center;
+    padding: 5px;
+    font-size: 14px;
+    font-weight: 700;
+    color: white;
+    background-color: #8C6A82;
+    border-radius: 8px;
+    text-align: center;
+   }  
+   
+  .converter__input-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .converter__label {
+    display: flex;
+    flex-direction: column;
+    align-self: flex-start;      
+    font-size: 14px;
+    color: gray;
+    max-width: 228px; 
+    width: 100%;
+    font-weight: 200;
+    }
+  .converter__input {
+    box-sizing: border-box;    
+    border-radius: 5px;
+    color: #272727;
+    border: 1px solid  #446EAE;
+    background-color: white;
+    box-shadow: 5px 5px 5px #446EAE;
+    height: 30px;
+    font-size: 10px;
   }
   
-  label {
-      align-self: flex-start;      
-      font-size: 15px;
-      color: gray;
-    }
-    
-  div{
+  input::placeholder{
+    font-size: 14px;
+  }
+  .converter__input:focus, .converter__input:active, .converter__input:visited{
+    border: 1px solid rgb(33, 178, 178)
+  }
+  .converter__select {
+    border-radius: 5px;
+    color: #272727;
+    border: 1px solid  #446EAE;
+    background-color: white;
+    box-shadow: 5px 5px 5px #446EAE;
+    height: 30px;
+    font-size: 12px; 
+  }
+  .converter__select:focus, .converter__select:active, .converter__select:visited{
+    border: 1px solid rgb(33, 178, 178);
+  }  
+  
+  .converter__rate {
+    height:22.5px;
+    font-size: 16px;
+    font-weight: 200;
+    color: #062263;
+
+  }
+
+  .converter__result {
+    color: #062263;
+    font-size: 18px; 
+    font-weight: 600;
+  }
+  
+  .converter__rate, .converter__result {
+    text-align: start; 
+    margin:0;
+    padding:0;
+  }
+   
+  .converter__message {
       color: red;
       font-size: 10px;
       font-weight: 300;
-     }
+      height: 22.5px;
+    }
 
-  span {
-    color: gray;
-     }
+  .converter__amount {
+       color: rgb(33, 178, 178);; 
+       font-size: 18px;
+       font-weight: 800;}
 
 </style> 
