@@ -112,7 +112,7 @@ import {currencies}from './lib/currencies.svelte'
 
 
 <style>
-  main {
+  .converter {
     margin: 0 auto;
     padding: 40px 50px 30px 50px ;
     border-radius: 12px;
@@ -124,6 +124,7 @@ import {currencies}from './lib/currencies.svelte'
     width: 300px;
     box-shadow: var(--background-shadow);
   }
+
   .converter__title-wrapper {
     display: flex;
     flex-direction: row;
@@ -229,5 +230,30 @@ import {currencies}from './lib/currencies.svelte'
        color: var(--secondary-color); 
        font-size: 18px;
        font-weight: 800;}
+
+@media screen and (max-width: 440px) {
+  .converter {
+    width: 280px;
+    box-sizing: border-box;
+  }
+ .converter__paragraph{
+  padding: 5px;
+    font-size: 10px;
+    font-weight: 700; }
+    0
+ .converter__input-wrapper{
+  gap: 15px;
+ }
+
+  .converter__amount {
+    word-break: break-all;
+    display: flex;
+    }
+  .converter__result {
+      word-break: break-all;
+    }
+
+    
+}
 
 </style> 

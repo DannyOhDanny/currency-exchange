@@ -15,10 +15,6 @@
   margin: 0;
   padding: 0;
   color-scheme: light dark;
-  background-image: url('./assets/dollar-blue-background-3840x2160-15641.webp');
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -32,16 +28,24 @@ body {
   min-width: 320px;
   /* overflow-y: hidden; */
 }
+
 #app {
-  min-width: 1180px;
   margin: 0 auto;
+  background-image: url('./assets/dollar-blue-background-3840x2160-15641.webp');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   height: 100vh;
 }
-
+@media screen and (max-width: 440px) {
+  #app {
+    max-width: 440px;
+  }
+}
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
@@ -78,7 +82,7 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
-@media (prefers-color-scheme: light) {
+/* @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
     background-color: #ffffff;
@@ -88,5 +92,5 @@ button:focus-visible {
   }
   button {
     background-color: #f9f9f9;
-  }
-}
+  } */
+/* } */
