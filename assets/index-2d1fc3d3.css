@@ -2,8 +2,10 @@
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
+  margin: 0;
+  padding: 0;
   color-scheme: light dark;
-  background-image: url('./dollar-blue-background-3840x2160-15641.webp');
+  background-image: url('./dollar-blue-background-3840x2160-15641-ea8f7949.webp');
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -13,6 +15,24 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 }
+body {
+  margin: 0 auto;
+  place-items: center;
+  min-width: 320px;
+}
+#app {
+  min-width: 1180px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
 a {
   font-weight: 500;
   color: #646cff;
@@ -20,29 +40,6 @@ a {
 }
 a:hover {
   color: #535bf2;
-}
-body {
-  margin: 0 auto;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-}
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-.card {
-  padding: 2em;
-}
-#app {
-  min-width: 1180px;
-  margin: 0 auto;
-  padding: 2rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
 }
 button {
   border-radius: 8px;
