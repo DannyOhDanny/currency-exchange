@@ -92,10 +92,10 @@ import {currencies}from './lib/currencies.svelte'
       <p class="converter__message">Введите сумму, которую вы хотите сконвертировать.</p>
 
       {:else if (isNaN(amountTo) || !amountTo) }
-      <p class="converter__message">Введите валюту, в которую вы хотите сконвертировать.</p>
-
-    {:else}
-     <span class="converter__amount">{amountTo} {currencyTo}</span>
+      <p class="converter__message">Введите валюту, в которую вы хотите сконвертировать вашу валюту.</p>
+      {:else }
+      <span class="converter__amount">{amountTo} {currencyTo}</span>
+      <p class="converter__message"></p>
     {/if}
   </p>
 </div>
@@ -106,7 +106,7 @@ import {currencies}from './lib/currencies.svelte'
 <style>
   main {
     margin: 0 auto;
-    padding: 40px 50px ;
+    padding: 40px 50px 30px 50px ;
     border-radius: 12px;
     background-color: white;
     display: flex;
@@ -213,6 +213,7 @@ import {currencies}from './lib/currencies.svelte'
       font-size: 10px;
       font-weight: 300;
       height: 22.5px;
+      margin: 10px  0 0 0 ;
     }
 
   .converter__amount {
