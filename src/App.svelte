@@ -38,7 +38,6 @@
     const cacheKey = `${currencyFrom}_${currencyTo}`;
     const now = Date.now();
     const cached = rateCache.get(cacheKey);
-
     if (cached && now - cached.timestamp < CACHE_TTL_MS) {
       console.debug(`[Cache] using cached rate for ${cacheKey}: ${cached.rate}`);
       return cached.rate;
@@ -56,6 +55,7 @@
 
       const rate = response.data[currencyTo];
       rateCache.set(cacheKey, { rate, timestamp: now });
+      console.log(rateCache);
       return rate;
     } catch (error) {
       console.error('Ошибка при запросе курса:', error);
