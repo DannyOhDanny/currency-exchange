@@ -6,8 +6,8 @@
   --white-color: white;
   --black-color: #272727;
   --error-color: red;
-  --background-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
-    rgba(0, 0, 0, 0.22) 0px 15px 12px;
+  --background-shadow:
+    rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
 
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -22,14 +22,8 @@
   -webkit-text-size-adjust: 100%;
 }
 
+#app,
 body {
-  margin: 0 auto;
-  place-items: center;
-  min-width: 320px;
-  /* overflow-y: hidden; */
-}
-
-#app {
   margin: 0 auto;
   background-image: url('./assets/dollar-blue-background-3840x2160-15641.webp');
   background-repeat: no-repeat;
@@ -41,11 +35,13 @@ body {
   justify-content: center;
   height: 100vh;
 }
+
 @media screen and (max-width: 440px) {
   #app {
     max-width: 440px;
   }
 }
+
 h1 {
   font-size: 3.2em;
   line-height: 1.1;

@@ -1,5 +1,3 @@
-<script context='module'>
-
 export const currencies = [
   { code: 'EUR', name: 'Евро', flag: '🇪🇺' },
   { code: 'USD', name: 'Доллар США', flag: '🇺🇸' },
@@ -30,12 +28,8 @@ export const currencies = [
   { code: 'MXN', name: 'Мексиканское песо', flag: '🇲🇽' },
   { code: 'MYR', name: 'Малайзийский ринггит', flag: '🇲🇾' },
   { code: 'NZD', name: 'Новозеландский доллар', flag: '🇳🇿' },
-  { code: 'PHP', name: 'Филиппинское песо', flag:'🇵🇭'},
-  { code:'SGD',name:'Сингапурский доллар',flag:'🇸🇬'},
-  { code:'THB',name:'Таиландский бат',flag:'🇹🇭'},
-  { code:'ZAR',name:'Южноафриканский рэнд',flag:'🇿🇦'}
+  { code: 'PHP', name: 'Филиппинское песо', flag: '🇵🇭' },
+  { code: 'SGD', name: 'Сингапурский доллар', flag: '🇸🇬' },
+  { code: 'THB', name: 'Таиландский бат', flag: '🇹🇭' },
+  { code: 'ZAR', name: 'Южноафриканский рэнд', flag: '🇿🇦' }
 ];
-
-console.log(currencies)
-</script>
-
